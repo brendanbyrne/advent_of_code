@@ -5,7 +5,7 @@
 
 int main()
 {
-  constexpr auto path = "/home/bbyrne/projects/advent_of_code/2020/day_1/input.txt";
+  constexpr auto path = "/home/bbyrne/projects/advent_of_code/2020/day1/input.txt";
   const auto data = advent::utility::read_newline_delimited<uint32_t>(path);
 
   const auto maybe_2 = advent::find_sum(data, 2020);
