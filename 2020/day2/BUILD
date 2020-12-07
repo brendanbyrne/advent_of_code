@@ -7,6 +7,6 @@ cc_library(
 
 cc_binary(
     name = "answer",
-    srcs = ["main.cc"],
+    srcs = ["answer.cc"],
     deps = [":day2"],
 )

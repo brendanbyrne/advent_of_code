@@ -11,14 +11,14 @@ int main()
   const auto maybe_2 = advent::find_sum(data, 2020);
 
   if(!maybe_2)
-    std::cout << "No solution was found";
+    std::cout << "No solution was found" << std::endl;
   else
     std::cout << "Multiple: " << maybe_2->first * maybe_2->second << std::endl;
 
   const auto maybe_3 = advent::find_sum_3(data, 2020);
 
   if(!maybe_3)
-    std::cout << "No solution was found";
+    std::cout << "No solution was found" << std::endl;
   else
   {
     const auto& tuple = maybe_3.value();

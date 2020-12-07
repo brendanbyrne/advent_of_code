@@ -6,8 +6,8 @@ cc_library(
 )
 
 cc_binary(
-    name = "main",
-    srcs = ["main.cc"],
+    name = "answer",
+    srcs = ["answer.cc"],
     deps = [
         ":day1",
         "//2020/utility:io",
