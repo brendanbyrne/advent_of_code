@@ -6,7 +6,7 @@
 
 int main()
 {
-  constexpr auto path = "/home/bbyrne/projects/advent_of_code/2020/day2/input.txt";
+  constexpr auto path = "2020/day2/input.txt";
 
   uint32_t valid_old{0};
   uint32_t valid_new{0};

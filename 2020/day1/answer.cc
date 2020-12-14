@@ -5,8 +5,16 @@
 
 int main()
 {
-  constexpr auto path = "/home/bbyrne/projects/advent_of_code/2020/day1/input.txt";
-  const auto data = advent::utility::read_newline_delimited<uint32_t>(path);
+  constexpr auto path = "2020/day1/input.txt";
+  const auto data = advent::utility::read_newline_delimited<uint32_t>(path,
+                                                                      [](const auto& line) -> std::optional<uint32_t>
+                                                                      {
+                                                                        std::basic_istringstream iss(line);
+                                                                        uint32_t value;
+                                                                        if (!(iss >> value))
+                                                                          return {};
+                                                                        return value;
+                                                                      });
 
   const auto maybe_2 = advent::find_sum(data, 2020);
 

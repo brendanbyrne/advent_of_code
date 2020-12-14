@@ -1,11 +1,10 @@
 #include <stdexcept>
 #include <fstream>
-#include <sstream>
 #include <string>
 
 namespace advent::utility {
 template <typename T>
-std::vector<T> read_newline_delimited(const std::filesystem::path& path)
+std::vector<T> read_newline_delimited(const std::filesystem::path& path, ParseLine<T> parse)
 {
   std::ifstream file(path);
 
@@ -15,12 +14,12 @@ std::vector<T> read_newline_delimited(const std::filesystem::path& path)
   {
     std::istringstream iss(line);
 
-    T value;
+    auto maybe = parse(line);
 
-    if (!(iss >> value))
+    if (!maybe)
       throw std::runtime_error("Failed to extract value.");
 
-    data.push_back(value);
+    data.push_back(maybe.value());
   }
 
   return data;
