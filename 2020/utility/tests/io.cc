@@ -4,7 +4,7 @@
 
 #include <sstream>
 
-TEST(UtilityTest, NewLine)
+TEST(Utility, NewLine)
 {
   constexpr auto path = "2020/utility/tests/input.txt";
   const auto loaded_data = advent::utility::read_newline_delimited<uint32_t>(path,

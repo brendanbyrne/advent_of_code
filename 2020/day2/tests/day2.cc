@@ -2,7 +2,7 @@
 
 #include "gtest/gtest.h"
 
-TEST(Day2Test, Parsing)
+TEST(Day2, Parsing)
 {
   const auto policy = advent::read_policy("1-3 a: abcde");
 
@@ -12,7 +12,7 @@ TEST(Day2Test, Parsing)
   ASSERT_EQ(policy.password, "abcde");
 }
 
-TEST(Day2Test, OldPolicy)
+TEST(Day2, OldPolicy)
 {
   const auto valid_policy = advent::read_policy("1-3 a: abcde");
   ASSERT_TRUE(advent::is_valid_old(valid_policy));
@@ -21,7 +21,7 @@ TEST(Day2Test, OldPolicy)
   ASSERT_FALSE(advent::is_valid_old(invalid_policy));
 }
 
-TEST(Day2Test, NewPolicy)
+TEST(Day2, NewPolicy)
 {
   const auto valid_policy = advent::read_policy("1-3 a: abcde");
   ASSERT_TRUE(advent::is_valid_new(valid_policy));
