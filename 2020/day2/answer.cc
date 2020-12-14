@@ -1,8 +1,7 @@
 #include "2020/day2/day2.hh"
+#include "2020/utility/io.hh"
 
-#include <fstream>
 #include <iostream>
-#include <string>
 
 int main()
 {
@@ -11,9 +10,9 @@ int main()
   uint32_t valid_old{0};
   uint32_t valid_new{0};
 
-  std::ifstream file(path);
-  std::string line;
-  while (std::getline(file, line))
+  const auto policies = advent::utility::read_newline_delimited(path);
+
+  for (const auto& line : policies)
   {
     const auto policy = advent::read_policy(line);
     if (advent::is_valid_old(policy))

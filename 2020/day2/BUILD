@@ -15,5 +15,8 @@ cc_binary(
     name = "answer",
     srcs = ["answer.cc"],
     data = [":input"],
-    deps = [":day2"],
+    deps = [
+        ":day2",
+        "//2020/utility:io",
+    ],
 )
